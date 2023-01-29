@@ -1,0 +1,31 @@
+env:
+    # Config
+    CONFIG: config.sh
+
+    # Telegram
+    TG_CHAT_ID: ENCRYPTED[c24be5d7575ee6becb1d610c33ca8ce80b881a1ccc8d6efb406bb5de17f6819ddf7df122ec6cadd542033beab045098a]
+    TG_TOKEN: ENCRYPTED[7d5b81c31fe84ff42ba34fb73189addb361bf2726741784f1797407802a2cd410339dd92ba82a1f5c41fc86336857e7a]
+
+    # Cirrus Specific Vars (Do *NOT* Change)
+    CIRRUS_SHELL: bash
+
+task:
+  name: "Recovery Build"
+  timeout_in: 120m
+  container:
+      image: ghcr.io/sushrut1101/docker:arch
+      cpu: 8
+      memory: 20G
+
+  Checks_script:
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico170420/TeamWin-CI/twrp/scripts/checks.sh)"
+
+  Sync_script:
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico170420/TeamWin-CI/twrp/scripts/sync.sh)"
+
+  Build_script:
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico170420/TeamWin-CI/twrp/scripts/build.sh)"
+
+  Upload_script:
+      - export TIMEOUT=43200 # Link timeout (in minutes)
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico170420/TeamWin-CI/twrp/scripts/upload.sh)"
