@@ -1,4 +1,4 @@
-# SkyHawk Recovery CI
+# TWRP Recovery CI
 A Free CI to Build SkyHawk Recovery
 
 ## How to Use?
