@@ -26,10 +26,10 @@ telegram_message() {
 # Variables
 REPO="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"                                         #<--- Change the wanted Repo here (Link to SHRP, RP or TWRP Manifest Link)
 Branch="twrp-12.1"                                                                                  #<--- Set Source Branch here (SHRP-12.1, android-12.1 for RP or twrp-12.1)
-Device="z3s"                                                                                         #<--- Set Device Codename here
+Device="p3s"                                                                                         #<--- Set Device Codename here
 OEM="samsung"                                                                                        #<--- Set Device Manufactor here
-DeviceTree="https://github.com/Nico170420/android_device_samsung_z3s.git"                            #<--- Put Device Tree Link here
-DTBranch="twrp"                                                                                     #<--- Set the DT Branch Name here
+DeviceTree="https://github.com/Nico17042020/android_device_samsung_p3s-test.git"                            #<--- Put Device Tree Link here
+DTBranch="android-11"                                                                                     #<--- Set the DT Branch Name here
 
 # Initialize Repo Manifest (SHRP/TWRP/RP)
 repo init -u ${REPO} -b ${Branch}
