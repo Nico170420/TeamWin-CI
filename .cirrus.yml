@@ -1,10 +1,6 @@
 env:
     # Config
     CONFIG: config.sh
-
-    # Telegram
-    TG_CHAT_ID: ENCRYPTED[10054dc17082dcc425d82e25316cf8481c048d412fcd396d5d5178bafa33823fd0c897120636f2feb15eb0988b3618a8]
-    TG_TOKEN: ENCRYPTED[34bbfc8cd74bf8db20eda92a88383ae5f84131c36a153ed700bd7de4e53768c42d20209024ecc83075f9881db537aa01]
     
     # Cirrus Specific Vars (Do *NOT* Change)
     CIRRUS_SHELL: bash
@@ -14,18 +10,18 @@ task:
   timeout_in: 120m
   container:
       image: ghcr.io/sushrut1101/docker:arch
-      cpu: 8
+      cpu: 5
       memory: 20G
 
   Checks_script:
-      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico170420/TeamWin-CI/twrp/scripts/checks.sh)"
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico17042020/TeamWin-CI/twrp/scripts/checks.sh)"
 
   Sync_script:
-      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico170420/TeamWin-CI/twrp/scripts/sync.sh)"
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico17042020/TeamWin-CI/twrp/scripts/sync.sh)"
 
   Build_script:
-      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico170420/TeamWin-CI/twrp/scripts/build.sh)"
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico17042020/TeamWin-CI/twrp/scripts/build.sh)"
 
   Upload_script:
       - export TIMEOUT=43200 # Link timeout (in minutes)
-      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico170420/TeamWin-CI/twrp/scripts/upload.sh)"
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Nico17042020/TeamWin-CI/twrp/scripts/upload.sh)"

@@ -24,7 +24,7 @@ telegram_message() {
 }
 
 # Variables
-Device="z3s"                    #<--- Set Device Codename here
+Device="p3s"                    #<--- Set Device Codename here
 Files="recovery.img"               #<--- Set Files to upload here (SHRP*.zip, RP*.zip, recovery.img)
 
 # Display a message
